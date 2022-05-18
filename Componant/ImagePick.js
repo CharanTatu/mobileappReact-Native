@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Button, PermissionsAndroid, StatusBar, StyleSheet, View, Image } from "react-native";
+import { Button, PermissionsAndroid, StatusBar, StyleSheet, View, Image, } from "react-native";
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 const ImagePick = () => {
-    const [imageUri, setImageUri] = useState("");
+    const [imageUri, setImageUri] = useState("java");
     const requestCameraPermission = () => {
         const options = {
             storageOptions: {
@@ -11,6 +11,7 @@ const ImagePick = () => {
             },
             // includeBase64: true
         }
+
         launchImageLibrary(options, responce => {
             console.log("respone==========>", responce);
             if (responce.didCancel) {
@@ -39,7 +40,11 @@ const ImagePick = () => {
                 backgroundColor: "aqua",
                 padding: 100,
                 marginVertical: 100,
-                resizeMode: 'contain', borderColor: 'black', borderRadius: 120, borderWidth: 15, justifyContent: 'center'
+                resizeMode: 'contain',
+                borderColor: 'black',
+                borderRadius: 120,
+                borderWidth: 1,
+                justifyContent: 'center'
             }} />
         </View>
     );

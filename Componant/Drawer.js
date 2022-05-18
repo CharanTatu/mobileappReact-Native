@@ -4,7 +4,6 @@ import DrawerLayout from 'react-native-drawer-layout';
 import Icon from 'react-native-vector-icons/Feather';
 const Drawer = ({ navigation }) => {
     const drawer = useRef(null);
-
     const [drawerPosition, setDrawerPosition] = useState("left");
 
     const navigationView = () => {
@@ -22,7 +21,13 @@ const Drawer = ({ navigation }) => {
                 <Button title="Trip-Adventures" color="deeppink" onPress={() => navigation.navigate("model")}></Button>
                 <Button title="Net-Info" color="gainsboro" onPress={() => navigation.navigate("netinfo")}></Button>
                 <Button title="pick" color="gainsboro" onPress={() => navigation.navigate("pick")}></Button>
+                <Button title="Easing-Animation" color="gainsboro" onPress={() => navigation.navigate("EasingAnimation")}></Button>
                 {/* <Button title="pick" color="gainsboro" onPress={() => navigation.navigate("timepick")}></Button> */}
+                <Button title="Google-Map" color="gainsboro" onPress={() => navigation.navigate("GoogleMap")} />
+                <Button title="Video-play" color="gainsboro" onPress={() => navigation.navigate("Video")} />
+                <Button title="Log-Redux-!!" color="gainsboro" onPress={() => navigation.navigate("LogRedux")} />
+                <Button title="SQlite-Operation" color="gainsboro" onPress={() => navigation.navigate("SQlite-Operation")} />
+
             </View>
         )
     };
