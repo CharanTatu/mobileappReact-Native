@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import { View, SafeAreaView, ScrollView, Text, } from 'react-native';
+import { View, SafeAreaView, ScrollView, Text, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Drawerlayout from './Componant/Picker';
@@ -46,6 +46,7 @@ const App = () => {
   // screenOptions={{ headerLeft: () => <View><Text>he</Text></View> }}
   return (
     <Provider store={store}>
+      <StatusBar backgroundColor='mediumspringgreen' />
       <NavigationContainer>
         <Toolbar />
         <Stack.Navigator initialRouteName={'profile'}>

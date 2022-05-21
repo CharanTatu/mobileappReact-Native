@@ -162,10 +162,11 @@ function SqliteData({ navigation }) {
                 <Button title='Submit-Data' onPress={setData} color='mediumspringgreen' />
             </View>
             <View style={{
+                // flex: 1,
                 flexDirection: 'row',
                 flexWrap: 'wrap',
                 padding: 1,
-                // marginLeft: 90
+                //marginLeft: '8%'
             }}>
                 {/* <Button title='Get-Data' onPress={getData} color='mediumspringgreen' />
                 <Button title='Edit-Data' onPress={() => navigation.navigate("Edit-Operation")} />
@@ -173,13 +174,13 @@ function SqliteData({ navigation }) {
                 <TouchableOpacity
                     style={{
                         height: 50,
-                        width: 130, marginTop: 10,
+                        width: 110, marginTop: 10,
                         marginBottom: 10,
                         backgroundColor: "mediumspringgreen", //#FF5733
                         borderRadius: 30,
                         justifyContent: 'center',
                         alignItems: 'center',
-                        margin: 3
+                        margin: 2
                     }}
                     onPress={getData}
                 >
@@ -188,13 +189,13 @@ function SqliteData({ navigation }) {
                 <TouchableOpacity
                     style={{
                         height: 50,
-                        width: 130, marginTop: 10,
+                        width: 110, marginTop: 10,
                         marginBottom: 10,
                         backgroundColor: "mediumspringgreen", //#FF5733
                         borderRadius: 30,
                         justifyContent: 'center',
                         alignItems: 'center',
-                        margin: 3
+                        margin: 2
                     }}
                     onPress={() => navigation.navigate("Edit-Operation")}
                 >
@@ -203,17 +204,17 @@ function SqliteData({ navigation }) {
                 <TouchableOpacity
                     style={{
                         height: 50,
-                        width: 130, marginTop: 10,
+                        width: 110, marginTop: 10,
                         marginBottom: 10,
                         backgroundColor: "mediumspringgreen", //#FF5733
                         borderRadius: 30,
                         justifyContent: 'center',
                         alignItems: 'center',
-                        margin: 3
+                        margin: 2
                     }}
                     onPress={() => navigation.navigate("Delete-Operation")}
                 >
-                    <Text>User-Delete</Text>
+                    <Text>Delete</Text>
                 </TouchableOpacity>
             </View>
             <FlatList

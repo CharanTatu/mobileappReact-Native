@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         marginTop: 22
     },
     itemre: {
-        backgroundColor: "#f9c2ff",
+        backgroundColor: "mediumspringgreen",
         padding: 20,
         marginVertical: 8,
         resizeMode: 'contain',

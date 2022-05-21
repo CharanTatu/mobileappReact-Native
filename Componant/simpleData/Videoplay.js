@@ -45,10 +45,9 @@ const styles = StyleSheet.create({
     },
     backgroundVideo: {
         position: 'absolute',
-        height: 800,
+        height: 1000,
         width: 1000,
-        marginTop: 20,
-        marginLeft: 20,
+        marginTop: 2,
         resizeMode: 'contain'
     },
 

@@ -26,7 +26,7 @@ const Models = ({ navigation }) => {
     }
     return (
         <View style={styles.centeredView}>
-            <Button title="If User Web-View display" color="lightpink" onPress={() => navigation.navigate("webview")}></Button>
+            <Button title="If User Web-View display" color="mediumspringgreen" onPress={() => navigation.navigate("webview")}></Button>
             <Modal
                 animationType="slide"
                 transparent={true}
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
         marginTop: 22
     },
     itemre: {
-        backgroundColor: "#f9c2ff",
+        backgroundColor: "mediumspringgreen",
         padding: 20,
         marginVertical: 8,
         resizeMode: 'contain',

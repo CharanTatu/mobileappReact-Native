@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
         resizeMode: 'contain'
     },
     items: {
-        backgroundColor: "#f9c2ff",
+        backgroundColor: "mediumspringgreen",
         padding: 20,
         marginVertical: 8,
         resizeMode: 'contain',

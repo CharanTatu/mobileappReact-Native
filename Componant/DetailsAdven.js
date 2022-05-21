@@ -51,18 +51,20 @@ function DetailsAdven({ route, navigation }) {
             }
         } catch (error) {
             console.log(error);
+            alert("Please ADD proper Date Fetching Issue")
         }
     }
     return (
         <View style={styles.centeredView}>
             <ScrollView>
                 <SafeAreaView >
-                    <View style={{ backgroundColor: "greenyellow" }}>
+                    <View style={{ backgroundColor: "mediumspringgreen" }}>
                         <TextInput
                             style={styles.input}
                             placeholder="Name!"
-                            value={name}
-                            onChange={(e) => setName(e.nativeEvent.text)}
+                            // value={name}
+                            // onChange={(e) => setName(e.nativeEvent.text)}
+                            onChangeText={(name) => setName(name)}
                         />
                         {/* <TextInput
                             style={styles.input}
@@ -83,7 +85,7 @@ function DetailsAdven({ route, navigation }) {
                                 onPress={() => showMode('date')}
                                 style={styles.input}
                                 placeholder="Pick A Data! dd/mm/yyyy"
-                            >Date {date}</Text>
+                            >Date!!{date}</Text>
                         </View>
                         <TextInput style={styles.input}
                             editable={false}
@@ -93,8 +95,9 @@ function DetailsAdven({ route, navigation }) {
                         <TextInput
                             style={styles.input1}
                             placeholder="Persons"
-                            value={person}
-                            onChange={(e) => setPerson(e.nativeEvent.text)}
+                            // value={person}
+                            // onChange={(e) => setPerson(e.nativeEvent.text)}
+                            onChangeText={(person) => setPerson(person)}
                         ></TextInput>
                         <Button title='Reserve' color="red" onPress={AddData} />
                     </View>
@@ -105,7 +108,7 @@ function DetailsAdven({ route, navigation }) {
                     <Text>{detailscity.content}</Text>
                     {/* <Image source={{ uri: detailscity.images }} style={styles.itemre} /> */}
                 </Text>
-                <Button title='Check Resrvation' color="red" onPress={() => navigation.navigate("reservation")} />
+                <Button title='Check Resrvation' color="mediumspringgreen" onPress={() => navigation.navigate("reservation")} />
             </ScrollView>
         </View>
     )

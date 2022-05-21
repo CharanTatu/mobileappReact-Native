@@ -10,6 +10,7 @@ const Drawer = ({ navigation }) => {
         return (
             <View>
                 <Button
+                    color="mediumspringgreen"
                     title="Close drawer"
                     onPress={() => drawer.current.closeDrawer()}
                 />
@@ -26,7 +27,7 @@ const Drawer = ({ navigation }) => {
                 <Button title="Google-Map" color="gainsboro" onPress={() => navigation.navigate("GoogleMap")} />
                 <Button title="Video-play" color="gainsboro" onPress={() => navigation.navigate("Video")} />
                 <Button title="Log-Redux-!!" color="gainsboro" onPress={() => navigation.navigate("LogRedux")} />
-                <Button title="SQlite-Operation" color="gainsboro" onPress={() => navigation.navigate("SQlite-Operation")} />
+                <Button title="SQlite-Operation" color="mediumspringgreen" onPress={() => navigation.navigate("SQlite-Operation")} />
 
             </View>
         )
@@ -48,7 +49,7 @@ const Drawer = ({ navigation }) => {
                 <View style={{ flex: 1, alignItems: "stretch" }}>
                     <View style={{
                         height: 40, borderWidth: 0,
-                        backgroundColor: "lightblue",
+                        backgroundColor: "mediumspringgreen",
                         flexDirection: 'row',
                         flexWrap: 'wrap',
                     }}>
@@ -57,7 +58,7 @@ const Drawer = ({ navigation }) => {
                             style={{ marginLeft: 20 }}
                         />
                         <Text style={{
-                            marginLeft: 130,
+                            marginLeft: 110,
                             marginTop: 10
                         }}>Welcome!!</Text>
                     </View>
