@@ -145,6 +145,9 @@ android {
         //add
          vectorDrawables.useSupportLibrary = true
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
+        //add camera
+         missingDimensionStrategy 'react-native-camera', 'general'
+         //missingDimensionStrategy 'react-native-camera', 'mlkit'
 
         if (isNewArchitectureEnabled()) {
             // We configure the NDK build only if you decide to opt-in for the New Architecture.
@@ -273,7 +276,8 @@ dependencies {
     //firebase
     // implementation project(':react-native-notifications')
     // implementation 'com.google.firebase:firebase-core:16.0.0'
-  
+     //add camera
+     implementation project(':react-native-camera')
 
     // implementation platform('com.google.firebase:firebase-bom:30.0.1')
     // implementation 'com.google.firebase:firebase-analytics'

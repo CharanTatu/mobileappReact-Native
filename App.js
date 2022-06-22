@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, SafeAreaView, ScrollView, Text, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -39,11 +39,47 @@ import { LoginScreen } from './Componant/assets/LoginScreen';
 import SqliteData from './Componant/database/SqliteData';
 import EditScreen from './Componant/database/EditScreen';
 import DeleteScreen from './Componant/database/DeleteScreen';
+import QrScanner from './Componant/qrScanner/QrScanner';
+import Titles from './Componant/qrScanner/Title'
+import ConditionRender from './Componant/ConditionRender';
 
 
 const Stack = createNativeStackNavigator();
+
+// const Greeting = (props) => {
+//   return (
+//     <View style={{ alignItems: 'center' }}>
+//       <Text>Hello {props.data}!</Text>
+//     </View>
+//   );
+// }
+
 const App = () => {
   // screenOptions={{ headerLeft: () => <View><Text>he</Text></View> }}
+
+  // function showTime() {
+  //   return true;
+  // }
+  // let data = setInterval(showTime, 2000);
+  //console.log(data)
+  // const data = true;
+  const [name, setName] = useState("");
+
+  useEffect(() => {
+    intervalFunc();
+  }, []);
+
+  const intervalFunc = () => {
+    setInterval(() => {
+      changeName();
+    }, 2000);
+  };
+
+  const changeName = () => {
+    name ? setName("Hello-Team!!") : setName("Hello-User!!");
+  };
+
+
   return (
     <Provider store={store}>
       <StatusBar backgroundColor='mediumspringgreen' />
@@ -54,14 +90,18 @@ const App = () => {
             title: 'welcome!!',
             headerTitleAlign: 'center',
             headerBackVisible: false,
-            headerShown: false
+            headerShown: false,
             //  headerLeft: () => <View>
             //   <TouchableOpacity>
             //     <Icon name='menu' size={35} color="#000000" />
             //   </TouchableOpacity>
             // </View>
           }} />
-          <Stack.Screen name="profile" component={ImageBack} options={{ title: "Hello Team" }} />
+          <Stack.Screen name="profile" component={ImageBack}
+            options={{
+              title: name
+            }}
+          />
           <Stack.Screen name="getapi" component={Apiget} options={{ title: "product" }} />
           <Stack.Screen name="timepick" component={TimePicker} options={{ title: "get time" }} />
           <Stack.Screen name="model" component={Models} options={{ title: "model" }} />
@@ -82,6 +122,9 @@ const App = () => {
           <Stack.Screen name="SQlite-Operation" component={SqliteData} options={{ title: "SQlite-Operation" }} />
           <Stack.Screen name="Edit-Operation" component={EditScreen} options={{ title: "Edit-Operation" }} />
           <Stack.Screen name="Delete-Operation" component={DeleteScreen} options={{ title: "Delete-Operation" }} />
+          <Stack.Screen name="QR-Scanner" component={QrScanner} options={{ title: "QR-Scanner" }} />
+          <Stack.Screen name="title" component={Titles} options={{ title: "title" }} />
+          <Stack.Screen name="Codition" component={ConditionRender} options={{ title: "title" }} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
@@ -106,3 +149,4 @@ const App = () => {
   );
 };
 export default App;
+

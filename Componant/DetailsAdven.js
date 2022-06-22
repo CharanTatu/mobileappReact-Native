@@ -4,6 +4,7 @@ import axios from 'axios'
 import DateTimePicker from '@react-native-community/datetimepicker';
 function DetailsAdven({ route, navigation }) {
     const [detailscity, setDetailscity] = useState([]);
+    console.log("====data", detailscity)
     const [person, setPerson] = useState(0);
     const [name, setName] = useState("");
     // const [date, setDate] = useState("");
@@ -14,11 +15,12 @@ function DetailsAdven({ route, navigation }) {
     const [date, setDate] = useState("");
     const changeSelectedDate = (event, selectedDate) => {
         const currentDate = selectedDate || mydate;
-        setShow(Platform.OS === "android")
+        // setShow(Platform.OS === "android")
         setDates(currentDate);
         let tempDate = new Date(currentDate)
         let fdate = tempDate.getDate() + '/' + (tempDate.getMonth() + 1) + '/' + tempDate.getFullYear()
         setDate(fdate);
+        setShow(false)
     };
     const showMode = (currentMode) => {
         setShow(true);

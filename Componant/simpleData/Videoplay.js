@@ -4,7 +4,6 @@ import Video from 'react-native-video';
 function Videoplay() {
     const video = useRef(null);
     const [status, setStatus] = useState({});
-    const [shows, setShows] = useState(true);
 
     return (
         <View style={styles.container}>

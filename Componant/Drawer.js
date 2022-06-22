@@ -18,6 +18,7 @@ const Drawer = ({ navigation }) => {
                 <Button title="Share-File" color="gainsboro" onPress={() => navigation.navigate("shareFile")}></Button>
                 <Button title="PanResponder" color="gainsboro" onPress={() => navigation.navigate("panrespo")}></Button>
                 <Button title="image-Pick" color="gainsboro" onPress={() => navigation.navigate("imagepic")}></Button>
+                <Button title="title" color="gainsboro" onPress={() => navigation.navigate("title")}></Button>
                 {/* <Button title="List" color="gainsboro" onPress={() => navigation.navigate("List")}></Button> */}
                 <Button title="Trip-Adventures" color="deeppink" onPress={() => navigation.navigate("model")}></Button>
                 <Button title="Net-Info" color="gainsboro" onPress={() => navigation.navigate("netinfo")}></Button>
@@ -27,6 +28,8 @@ const Drawer = ({ navigation }) => {
                 <Button title="Google-Map" color="gainsboro" onPress={() => navigation.navigate("GoogleMap")} />
                 <Button title="Video-play" color="gainsboro" onPress={() => navigation.navigate("Video")} />
                 <Button title="Log-Redux-!!" color="gainsboro" onPress={() => navigation.navigate("LogRedux")} />
+                <Button title="QR-Scanner!!" color="gainsboro" onPress={() => navigation.navigate("QR-Scanner")} />
+                <Button title="Codition-render" color="gainsboro" onPress={() => navigation.navigate("Codition")} />
                 <Button title="SQlite-Operation" color="mediumspringgreen" onPress={() => navigation.navigate("SQlite-Operation")} />
 
             </View>
