@@ -22,6 +22,7 @@
     "axios": "^0.27.2",
     "react": "17.0.2",
     "react-native": "0.68.1",
+    "react-native-camera": "^4.2.1",
     "react-native-drawer-layout": "^2.0.0",
     "react-native-image-crop-picker": "^0.37.3",
     "react-native-image-picker": "^4.8.0",
