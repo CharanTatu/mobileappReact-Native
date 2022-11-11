@@ -16,8 +16,8 @@ const Drawer = ({navigation}) => {
 
   const navigationView = () => {
     return (
-      <View>
-        <Button
+      <View style={{marginTop:60}}>
+        {/* <Button
           color="mediumspringgreen"
           title="Close drawer"
           onPress={() => drawer.current.closeDrawer()}
@@ -41,13 +41,13 @@ const Drawer = ({navigation}) => {
         <Button
           title="title"
           color="gainsboro"
-          onPress={() => navigation.navigate('title')}></Button>
+          onPress={() => navigation.navigate('title')}></Button> */}
         {/* <Button title="List" color="gainsboro" onPress={() => navigation.navigate("List")}></Button> */}
         <Button
           title="Trip-Adventures"
           color="deeppink"
           onPress={() => navigation.navigate('model')}></Button>
-        <Button
+        {/* <Button
           title="Net-Info"
           color="gainsboro"
           onPress={() => navigation.navigate('netinfo')}></Button>
@@ -58,9 +58,9 @@ const Drawer = ({navigation}) => {
         <Button
           title="Easing-Animation"
           color="gainsboro"
-          onPress={() => navigation.navigate('EasingAnimation')}></Button>
+          onPress={() => navigation.navigate('EasingAnimation')}></Button> */}
         {/* <Button title="pick" color="gainsboro" onPress={() => navigation.navigate("timepick")}></Button> */}
-        <Button
+        {/* <Button
           title="Google-Map"
           color="gainsboro"
           onPress={() => navigation.navigate('GoogleMap')}
@@ -94,13 +94,12 @@ const Drawer = ({navigation}) => {
           title="hover-animation"
           color="blue"
           onPress={() => navigation.navigate('animation')}
-        />
+        /> */}
       </View>
     );
   };
 
   return (
-    <>
       <DrawerLayout
         drawerBackgroundColor="white"
         ref={drawer}
@@ -114,31 +113,30 @@ const Drawer = ({navigation}) => {
         <View style={{flex: 1, alignItems: 'stretch'}}>
           <View
             style={{
-              height: 40,
+              height: 50,
               borderWidth: 0,
-              backgroundColor: 'mediumspringgreen',
+              backgroundColor: '#0000FF',
               flexDirection: 'row',
               flexWrap: 'wrap',
             }}>
             <Icon
               name="menu"
-              size={35}
+              size={30}
               color="#000000"
               onPress={() => drawer.current.openDrawer()}
-              style={{marginLeft: 20}}
+              style={{marginLeft: 20,marginTop:20}}
             />
             <Text
               style={{
                 marginLeft: 110,
-                marginTop: 10,
+                marginTop: 20,
               }}>
               Welcome!!
             </Text>
           </View>
+          <Text style={{textAlign:'center',marginTop:70, fontFamily: "Raleway", fontStyle: "italic", fontWeight: "bold"}}>Click side bar menu and enjoy your trip</Text>
         </View>
       </DrawerLayout>
-      <View></View>
-    </>
   );
 };
 

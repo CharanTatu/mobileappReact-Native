@@ -43,7 +43,14 @@ import QrScanner from './Componant/qrScanner/QrScanner';
 import Titles from './Componant/qrScanner/Title';
 import ConditionRender from './Componant/ConditionRender';
 import Hoveranimation from './Componant/Hoveranimation';
-
+import UiDesign from './Componant/UiDesign';
+import MultiselctDrop from './Componant/MultiselctDrop';
+import { LogBox } from 'react-native'
+LogBox.ignoreLogs([
+	'ViewPropTypes will be removed from React Native. Migrate to ViewPropTypes exported from \'deprecated-react-native-prop-types\'.',
+	'NativeBase: The contrast ratio of',
+	"[react-native-gesture-handler] Seems like you\'re using an old API with gesture components, check out new Gestures system!",
+])
 const Stack = createNativeStackNavigator();
 
 // const Greeting = (props) => {
@@ -81,10 +88,9 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <StatusBar backgroundColor="mediumspringgreen" />
+      <StatusBar backgroundColor="#0000FF" />
       <NavigationContainer>
-        <Toolbar />
-        <Stack.Navigator initialRouteName={'profile'}>
+        <Stack.Navigator initialRouteName={'uiDesign'}>
           <Stack.Screen
             name="Home"
             component={Drawer}
@@ -103,9 +109,16 @@ const App = () => {
           <Stack.Screen
             name="profile"
             component={ImageBack}
-            options={{
-              title: name,
-            }}
+          />
+            <Stack.Screen
+            name="uiDesign"
+            component={UiDesign}
+            options={{headerShown:false}}
+          />
+          <Stack.Screen 
+          name="Dropdown"
+          component={MultiselctDrop}
+          options={{headerShown:false}}
           />
           <Stack.Screen
             name="getapi"
