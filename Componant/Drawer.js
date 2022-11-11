@@ -6,17 +6,39 @@ import {
   SafeAreaView,
   StyleSheet,
   Pressable,
+  TouchableOpacity,
   TextInput,
 } from 'react-native';
 import DrawerLayout from 'react-native-drawer-layout';
 import Icon from 'react-native-vector-icons/Feather';
+import Icons from 'react-native-vector-icons/FontAwesome';
+import Forword from 'react-native-vector-icons/AntDesign';
 const Drawer = ({navigation}) => {
   const drawer = useRef(null);
   const [drawerPosition, setDrawerPosition] = useState('left');
 
   const navigationView = () => {
     return (
-      <View style={{marginTop:60}}>
+      <View>
+       <Text style={{alignItems:'center',color:"blue",justifyContent:'center',marginTop:'10%'
+       ,marginLeft:'10%',fontSize:20}}>{"Welcome in my trip app"}</Text>
+       <TouchableOpacity
+   style={{
+       borderWidth:1,
+       borderColor:'rgba(0,0,0,0.2)',
+       alignItems:'center',
+       justifyContent:'center',
+       width:100,
+       height:100,
+       backgroundColor:'#fff',
+       borderRadius:50,
+       marginLeft:'30%',
+       marginTop:'10%'
+           }}
+ >
+  <Icons name={"user-circle"}  size={70} color="#01a699" />
+
+ </TouchableOpacity>
         {/* <Button
           color="mediumspringgreen"
           title="Close drawer"
@@ -43,10 +65,13 @@ const Drawer = ({navigation}) => {
           color="gainsboro"
           onPress={() => navigation.navigate('title')}></Button> */}
         {/* <Button title="List" color="gainsboro" onPress={() => navigation.navigate("List")}></Button> */}
-        <Button
+       <View style={{marginTop:"10%"}}>
+       <Button
+        style={{marginTop:90}}
           title="Trip-Adventures"
           color="deeppink"
           onPress={() => navigation.navigate('model')}></Button>
+       </View>
         {/* <Button
           title="Net-Info"
           color="gainsboro"
@@ -117,24 +142,41 @@ const Drawer = ({navigation}) => {
               borderWidth: 0,
               backgroundColor: '#0000FF',
               flexDirection: 'row',
-              flexWrap: 'wrap',
             }}>
             <Icon
               name="menu"
               size={30}
               color="#000000"
               onPress={() => drawer.current.openDrawer()}
-              style={{marginLeft: 20,marginTop:20}}
+              style={{marginLeft: 20,marginTop:5,}}
             />
             <Text
               style={{
-                marginLeft: 110,
-                marginTop: 20,
+               marginLeft:'25%',marginTopL:20, textAlign:'center', fontFamily: "Raleway", fontWeight: "bold",fontSize:20,justifyContent:'center', alignSelf: 'stretch', position: 'absolute',
               }}>
-              Welcome!!
+              Welcome!! Charan
             </Text>
           </View>
-          <Text style={{textAlign:'center',marginTop:70, fontFamily: "Raleway", fontStyle: "italic", fontWeight: "bold"}}>Click side bar menu and enjoy your trip</Text>
+         <View style={{marginVertical:'50%',}}>
+         <Text style={{textAlign:'center', fontFamily: "Raleway", fontSize:20,fontStyle: "italic", fontWeight: "bold"}}>Click side bar menu and enjoy your trip</Text>
+         <TouchableOpacity
+   style={{
+       borderWidth:1,
+       borderColor:'rgba(0,0,0,0.2)',
+       alignItems:'center',
+       justifyContent:'center',
+       width:50,
+       height:50,
+       backgroundColor:'blue',
+       borderRadius:50,
+       marginHorizontal:'40%',
+       marginTop:'10%'
+     }}
+     onPress={() => navigation.navigate('uiDesign')}
+ >
+   <Forword name={"arrowright"}  size={30} color="#01a699" />
+ </TouchableOpacity>
+         </View>
         </View>
       </DrawerLayout>
   );

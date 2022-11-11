@@ -90,7 +90,7 @@ const App = () => {
     <Provider store={store}>
       <StatusBar backgroundColor="#0000FF" />
       <NavigationContainer>
-        <Stack.Navigator initialRouteName={'uiDesign'}>
+        <Stack.Navigator initialRouteName={'Home'}>
           <Stack.Screen
             name="Home"
             component={Drawer}
