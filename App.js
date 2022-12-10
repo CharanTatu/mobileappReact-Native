@@ -46,10 +46,12 @@ import Hoveranimation from './Componant/Hoveranimation';
 import UiDesign from './Componant/UiDesign';
 import MultiselctDrop from './Componant/MultiselctDrop';
 import { LogBox } from 'react-native'
+import OCR from './Componant/OCR';
 LogBox.ignoreLogs([
 	'ViewPropTypes will be removed from React Native. Migrate to ViewPropTypes exported from \'deprecated-react-native-prop-types\'.',
 	'NativeBase: The contrast ratio of',
 	"[react-native-gesture-handler] Seems like you\'re using an old API with gesture components, check out new Gestures system!",
+  'componentWillMount has been renamed, and is not recommended for use'
 ])
 const Stack = createNativeStackNavigator();
 
@@ -88,7 +90,7 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <StatusBar backgroundColor="#0000FF" />
+      <StatusBar backgroundColor="#2b62f2" />
       <NavigationContainer>
         <Stack.Navigator initialRouteName={'Home'}>
           <Stack.Screen
@@ -113,6 +115,11 @@ const App = () => {
             <Stack.Screen
             name="uiDesign"
             component={UiDesign}
+            options={{headerShown:false}}
+          />
+          <Stack.Screen
+            name="RNUser"
+            component={OCR}
             options={{headerShown:false}}
           />
           <Stack.Screen 
@@ -203,7 +210,10 @@ const App = () => {
           <Stack.Screen
             name="LogRedux"
             component={LoginScreen}
-            options={{title: 'Log-Redux'}}
+            options={{title: 'Log-Redux',
+            headerBackVisible: false,
+            headerShown: false,
+          }}
           />
           <Stack.Screen
             name="SQlite-Operation"

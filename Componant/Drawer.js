@@ -20,7 +20,7 @@ const Drawer = ({navigation}) => {
   const navigationView = () => {
     return (
       <View>
-       <Text style={{alignItems:'center',color:"blue",justifyContent:'center',marginTop:'10%'
+       <Text style={{alignItems:'center',color:"#2b62f2",justifyContent:'center',marginTop:'10%'
        ,marginLeft:'10%',fontSize:20}}>{"Welcome in my trip app"}</Text>
        <TouchableOpacity
    style={{
@@ -71,6 +71,11 @@ const Drawer = ({navigation}) => {
           title="Trip-Adventures"
           color="deeppink"
           onPress={() => navigation.navigate('model')}></Button>
+           <Button
+          title="Log-Redux-!!"
+          color="gainsboro"
+          onPress={() => navigation.navigate('LogRedux')}
+        />
        </View>
         {/* <Button
           title="Net-Info"
@@ -117,7 +122,7 @@ const Drawer = ({navigation}) => {
         />
         <Button
           title="hover-animation"
-          color="blue"
+          color="#2b62f2"
           onPress={() => navigation.navigate('animation')}
         /> */}
       </View>
@@ -135,47 +140,45 @@ const Drawer = ({navigation}) => {
                     title="Open drawer"
                     onPress={() => drawer.current.openDrawer()}
                 /> */}
-        <View style={{flex: 1, alignItems: 'stretch'}}>
+        <View style={{flex: 1, alignItems: 'stretch',}}>
           <View
             style={{
               height: 50,
               borderWidth: 0,
-              backgroundColor: '#0000FF',
+              backgroundColor: '#2b62f2',
               flexDirection: 'row',
+              flexWrap: 'wrap'
             }}>
             <Icon
               name="menu"
               size={30}
-              color="#000000"
+              color="#FFFFFF"
               onPress={() => drawer.current.openDrawer()}
-              style={{marginLeft: 20,marginTop:5,}}
+              style={{marginLeft: 20,}}
             />
             <Text
               style={{
-               marginLeft:'25%',marginTopL:20, textAlign:'center', fontFamily: "Raleway", fontWeight: "bold",fontSize:20,justifyContent:'center', alignSelf: 'stretch', position: 'absolute',
+               marginLeft:'25%', textAlign:'center', fontFamily: "Raleway", color:'#FFFFFF',
+               fontWeight: "bold",fontSize:20,justifyContent:'center', alignSelf: 'stretch', position: 'absolute',
               }}>
-              Welcome!! Charan
+              Welcome RN-User!!
             </Text>
           </View>
-         <View style={{marginVertical:'50%',}}>
-         <Text style={{textAlign:'center', fontFamily: "Raleway", fontSize:20,fontStyle: "italic", fontWeight: "bold"}}>Click side bar menu and enjoy your trip</Text>
+          <View style={styles.buttonTile}>
+            <TouchableOpacity
+             onPress={() => navigation.navigate('model')}
+             >
+            <Text style={{color:'#2b62f2',fontSize: 16,fontWeight: "bold"}}>Booking Now</Text>
+            </TouchableOpacity>
+          </View>
+         <View style={styles.card}>
+         <Text style={styles.logStyle}>Click side bar menu and enjoy your trip</Text>
          <TouchableOpacity
-   style={{
-       borderWidth:1,
-       borderColor:'rgba(0,0,0,0.2)',
-       alignItems:'center',
-       justifyContent:'center',
-       width:50,
-       height:50,
-       backgroundColor:'blue',
-       borderRadius:50,
-       marginHorizontal:'40%',
-       marginTop:'10%'
-     }}
-     onPress={() => navigation.navigate('uiDesign')}
+      style={styles.circleButton}
+     onPress={() => navigation.navigate('RNUser')}
  >
-   <Forword name={"arrowright"}  size={30} color="#01a699" />
- </TouchableOpacity>
+   <Forword name={"arrowright"}  size={30} color="#FFFFFF" />
+        </TouchableOpacity>
          </View>
         </View>
       </DrawerLayout>
@@ -188,4 +191,53 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  logStyle:{
+    textAlign:'center', 
+    fontFamily: "Raleway",
+     fontSize:20,fontStyle: "italic", fontWeight: "bold"
+  },
+  card: {
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 2},
+    shadowRadius: 6,
+    shadowOpacity: 0.26,
+    elevation: 8,
+    backgroundColor: 'white',
+    padding: 20,
+    borderRadius: 10,
+    marginLeft: 20,
+    marginRight: 20,
+    marginVertical:'35%'
+  },
+  buttonTile: {
+    height: 50,
+    width: '80%',
+    marginTop: 30,
+    marginBottom: 10,
+    backgroundColor: 'white', //#FF5733
+    borderRadius: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 2,
+    shadowColor: 'black',
+    shadowOffset: {width: 0, height: 2},
+    shadowRadius: 6,
+    shadowOpacity: 0.26,
+    elevation: 8,
+    backgroundColor: 'white',
+    marginLeft: '10%',
+    marginRight: '10%',
+  },
+  circleButton:{
+    borderWidth:1,
+    borderColor:'rgba(0,0,0,0.2)',
+    alignItems:'center',
+    justifyContent:'center',
+    width:50,
+    height:50,
+    backgroundColor:'#2b62f2',
+    borderRadius:50,
+    marginHorizontal:'40%',
+    marginTop:'10%'
+  }
 });

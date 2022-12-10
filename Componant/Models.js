@@ -1,3 +1,4 @@
+
 import React, {useEffect, useState} from 'react';
 import {
   Modal,
@@ -10,6 +11,7 @@ import {
   ScrollView,
   TouchableOpacity,
   Button,
+  ToastAndroid
 } from 'react-native';
 
 const Models = ({navigation}) => {
@@ -21,10 +23,19 @@ const Models = ({navigation}) => {
     getData();
   }, []);
   const getData = async () => {
-    const result = await fetch('https://mtrip-dynamic.herokuapp.com/cities');
+    try{
+     const result = await fetch('https://mtrip-dynamic.herokuapp.com/cities');
     const data = await result.json();
     setCitys(data);
     setShow(false);
+    }catch(err){
+     console.log("============error",err)
+     ToastAndroid.showWithGravity(
+      "Server Down Currentl,Api-Maintenance",
+      ToastAndroid.LONG,
+      ToastAndroid.BOTTOM
+    );
+    }
   };
   return (
     <View style={styles.centeredView}>
