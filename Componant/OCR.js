@@ -54,8 +54,17 @@ const OCR = () => {
         const file = media.assets[0].uri;
         const textRecognition = await RNTextDetector.detectFromUri(file);
          console.log('===================TextData',textRecognition.map(data=>data.text));
-         setCardview(true)
-         setTextData(textRecognition.map(data=>data.text))
+         const TextData = textRecognition.map(data=>data.text)
+         if(TextData == null || TextData == ''){
+          ToastAndroid.showWithGravity( "Text Data is empty for attached file",
+          ToastAndroid.LONG,
+          ToastAndroid.CENTER)
+          setCardview(false)
+          setTextData('')
+         }else{
+          setCardview(true)
+          setTextData(textRecognition.map(data=>data.text))
+         }
       }
     }
  
