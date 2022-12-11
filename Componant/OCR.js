@@ -12,7 +12,9 @@ import { launchCamera, launchImageLibrary } from 'react-native-image-picker'
 import RNTextDetector from 'rn-text-detector'
 const OCR = () => {
     const [textData, setTextData] = useState('')
-    const [cardview, setCardview] = useState(false);
+    const [cardview, setCardview ] = useState(false);
+    const [numPlate,setNumPlate] = useState("");
+    const regex = /[A-Z || a-z]{0,2}[// -]{0,2}[0-9]{2}[// -]{0,1}[A-Z || a-z]{1,2}[// -]{0,1}[0-9]{4}/g;
      const requestCameraPermission = async () => {
        try {
          const granted = await PermissionsAndroid.request(
@@ -61,9 +63,18 @@ const OCR = () => {
           ToastAndroid.CENTER)
           setCardview(false)
           setTextData('')
+          setNumPlate('')
          }else{
           setCardview(true)
           setTextData(textRecognition.map(data=>data.text))
+          const found = TextData.toString().match(regex);
+         console.log("=================finalyfoundDataNuberplate",found);
+         if(found == null || found == '')
+         {
+          setNumPlate(" is it for Empty")
+         }else{
+         setNumPlate(found)
+         }
          }
       }
     }
@@ -87,8 +98,9 @@ const OCR = () => {
           </View>
           <View>
             {cardview ? (<>
-                <View style={styles.card}>
-            <Text style={{fontWeight: 'bold'}}>User Data:{textData}</Text>
+                <View style={[styles.card,{marginVertical:'20%'}]}>
+            <Text style={{fontWeight: 'bold', paddingBottom: 4, }}>Capture-Data:{textData}</Text>
+            <Text style={{fontWeight: 'bold',color:'#2b62f2'}}>Number-Plate-Data:{numPlate}</Text>
           </View>
             </>):(<></>)}
           </View>
@@ -142,7 +154,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginLeft: 20,
     marginRight: 20,
-    marginVertical:'20%'
+   //marginVertical:'20%'
   },
 });
  
