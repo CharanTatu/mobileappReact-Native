@@ -1,0 +1,1 @@
+export const model_api = 'https://mtrip-dynamic.herokuapp.com/cities'; 

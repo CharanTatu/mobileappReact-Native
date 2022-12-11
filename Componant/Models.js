@@ -13,6 +13,7 @@ import {
   Button,
   ToastAndroid
 } from 'react-native';
+import { model_api } from './AllApi/constant';
 
 const Models = ({navigation}) => {
   const [show, setShow] = useState(true);
@@ -24,7 +25,7 @@ const Models = ({navigation}) => {
   }, []);
   const getData = async () => {
     try{
-     const result = await fetch('https://mtrip-dynamic.herokuapp.com/cities');
+     const result = await fetch(model_api);
     const data = await result.json();
     setCitys(data);
     setShow(false);

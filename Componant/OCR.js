@@ -5,8 +5,8 @@ import {
   SafeAreaView,
   StyleSheet,
   TouchableOpacity,
- 
-  PermissionsAndroid
+  PermissionsAndroid,
+  ToastAndroid
 } from 'react-native';
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker'
 import RNTextDetector from 'rn-text-detector'
@@ -46,12 +46,17 @@ const OCR = () => {
     }
     async function onImageSelect(media){
       console.log("===============media",media)
+      if(media.didCancel == true){
+        ToastAndroid.showWithGravity( "You are empty file attached",
+        ToastAndroid.LONG,
+        ToastAndroid.BOTTOM)
+      }else{
         const file = media.assets[0].uri;
         const textRecognition = await RNTextDetector.detectFromUri(file);
          console.log('===================TextData',textRecognition.map(data=>data.text));
          setCardview(true)
          setTextData(textRecognition.map(data=>data.text))
-
+      }
     }
  
   return (
