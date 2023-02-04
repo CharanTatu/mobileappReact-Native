@@ -9,6 +9,7 @@ function Advance({ route, navigation }) {
     const GetApi = async () => {
         const result = await fetch(`https://mtrip-dynamic.herokuapp.com/adventures?city=${route.params.id}`)
         const data = await result.json();
+        //hi test commit
         setCities(data);
     }
     return (
