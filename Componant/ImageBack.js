@@ -7,7 +7,7 @@ const image = { uri: "https://images.pexels.com/photos/3573382/pexels-photo-3573
 const ImageBack = ({ navigation }) => (
     <View style={styles.container}>
         <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-            <Text style={styles.text1}>Charan!</Text>
+            <Text style={styles.text1}>Charan!!</Text>
             <TouchableOpacity onPress={() => navigation.navigate("Home")}>
                 <Text style={styles.text}> Mobile Team</Text>
             </TouchableOpacity>
