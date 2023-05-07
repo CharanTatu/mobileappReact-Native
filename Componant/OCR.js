@@ -6,10 +6,12 @@ import {
   StyleSheet,
   TouchableOpacity,
   PermissionsAndroid,
-  ToastAndroid
+  ToastAndroid,
+  FlatList
 } from 'react-native';
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker'
 import RNTextDetector from 'rn-text-detector'
+import Post from './Post';
 const OCR = () => {
     const [textData, setTextData] = useState('')
     const [cardview, setCardview ] = useState(false);
@@ -78,7 +80,23 @@ const OCR = () => {
          }
       }
     }
- 
+    const posts =[
+      {id:1,author:'charan',
+      location:'pune city',
+      DateTime:'-2hrs',
+      like:22,
+      content:'There is a new building for rent in the south corner of the colony. here are the pics; please check @patel',
+      ImageArray:['http://i.imgur.com/XP2BE7q.jpg','http://i.imgur.com/6vOahbP.jpg']
+      },
+      {id:2,author:'nyn',location:'pune,aundh',like:12,
+      content:'Dear friends @sachin its my first post,so all Dgate user i am happy to share that my garden inogartion program start so i will share some pic',ImageArray:[]},
+      {id:3,author:'vishal',ImageArray:['http://i.imgur.com/6vOahbP.jpg'],like:42,
+      content:'Hi, Dear friends its my first post,so all Dgate user i am happy to share that my #garden inogartion program start so i will share some pic'},
+    ]
+  const renderItem = ({ item }) => (
+      <Post post={item} />
+    );
+  
   return (
     <SafeAreaView style={styles.container}>
       <View>
@@ -105,6 +123,13 @@ const OCR = () => {
             </>):(<></>)}
           </View>
         </View>
+    <View>
+      <FlatList
+        data={posts}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id.toString()}
+      />
+    </View>
       </View>
     </SafeAreaView>
   );
