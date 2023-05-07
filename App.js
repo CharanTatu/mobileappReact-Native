@@ -47,6 +47,8 @@ import UiDesign from './Componant/UiDesign';
 import MultiselctDrop from './Componant/MultiselctDrop';
 import { LogBox } from 'react-native'
 import OCR from './Componant/OCR';
+import Messaging from './Componant/ChatMessage/messaging';
+import Chat from './Componant/ChatMessage/chat';
 LogBox.ignoreLogs([
 	'ViewPropTypes will be removed from React Native. Migrate to ViewPropTypes exported from \'deprecated-react-native-prop-types\'.',
 	'NativeBase: The contrast ratio of',
@@ -214,6 +216,26 @@ const App = () => {
             headerBackVisible: false,
             headerShown: false,
           }}
+          />
+          <Stack.Screen
+            name="chat"
+            component={Chat}
+            options={({route})=>({
+              title:route.params.userName,
+              headerBackTitleVisible:false,
+              headerTitleStyle: { fontWeight: 'bold', fontSize: 17},
+              headerTitleAlign: 'center',
+            })}
+          />
+          <Stack.Screen
+            name="messaging"
+            component={Messaging}
+            options={({route})=>({
+              title:'Messaging',
+              headerBackTitleVisible:false,
+              headerTitleStyle: { fontWeight: 'bold', fontSize: 20},
+              headerTitleAlign: 'center',
+            })}
           />
           <Stack.Screen
             name="SQlite-Operation"

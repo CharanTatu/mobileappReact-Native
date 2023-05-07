@@ -76,6 +76,11 @@ const Drawer = ({navigation}) => {
           color="gainsboro"
           onPress={() => navigation.navigate('LogRedux')}
         />
+         <Button
+          title="Chat-now!!"
+          color="gainsboro"
+          onPress={() => navigation.navigate('messaging')}
+        />
        </View>
         {/* <Button
           title="Net-Info"
@@ -171,6 +176,13 @@ const Drawer = ({navigation}) => {
             <Text style={{color:'#2b62f2',fontSize: 16,fontWeight: "bold"}}>Booking Now</Text>
             </TouchableOpacity>
           </View>
+
+          <View style={styles.buttonTile}>
+            <TouchableOpacity onPress={() => navigation.navigate('messaging')}>
+            <Text style={{color:'#2b62f2',fontSize: 16,fontWeight: "bold"}}>Chat with friend</Text>
+            </TouchableOpacity>
+          </View>
+
          <View style={styles.card}>
          <Text style={styles.logStyle}>Click side bar menu and enjoy your trip</Text>
          <TouchableOpacity
