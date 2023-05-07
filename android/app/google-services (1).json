@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "463274600341",
+    "project_id": "messagechatrn",
+    "storage_bucket": "messagechatrn.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:463274600341:android:5fa94bb6c7b85ee357789c",
+        "android_client_info": {
+          "package_name": "com.nativeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "463274600341-dgosm6sjh7rlm40ds9dn7aa5296bvaqe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKDGq6UOcWffk2NaqD5I5WbeZ2EMlPxzY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "463274600341-dgosm6sjh7rlm40ds9dn7aa5296bvaqe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

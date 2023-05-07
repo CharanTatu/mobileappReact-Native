@@ -51,7 +51,7 @@ const Messaging = ({navigation}) => {
        data={Messages}
        keyExtractor={item=>item.id}
        renderItem={({item}) => (
-        <TouchableOpacity onPress={() => navigation.navigate('chat', {userName: item.userName})}>
+        <TouchableOpacity onPress={() => navigation.navigate('chat', {userName: item.userName,userId:item.id})}>
             <View style={{flexDirection:'row',marginTop:'5%',width:'100%',borderBottomWidth:1,borderBottomColor:'red'}}>
               <Image source={item.userImg} style={{height:40,width:30,alignSelf:'center',marginLeft:'2%'}}/>
                 <View style={{maxWidth:'90%',padding:'3%'}}>

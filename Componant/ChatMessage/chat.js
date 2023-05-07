@@ -3,9 +3,12 @@ import {View, ScrollView, Text, Button, StyleSheet} from 'react-native';
 import {Bubble, GiftedChat, Send} from 'react-native-gifted-chat';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { useRoute } from '@react-navigation/native';
+import firestore from '@react-native-firebase/firestore';
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
+  const route = useRoute();
 
   useEffect(() => {
     setMessages([
@@ -20,7 +23,7 @@ const Chat = () => {
         },
       },
       {
-        _id: 2,
+        _id:route.params.userId,
         text: 'Hello I am charan',
         createdAt: new Date(),
         user: {
@@ -33,8 +36,14 @@ const Chat = () => {
   }, []);
 
   const onSend = useCallback((messages = []) => {
+    console.log("messages_________",messages)
+    const msg = messages[0];
+    const senMsg = {...msg,
+        senderId:route.params.userId}
     setMessages((previousMessages) =>
       GiftedChat.append(previousMessages, messages),
+    //   firestore().collection('chats').doc("1234").collection('message')
+    //   .add({...senMsg,createdAt:new Date(),})
     );
   }, []);
 
