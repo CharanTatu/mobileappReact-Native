@@ -4,46 +4,53 @@ import {Bubble, GiftedChat, Send} from 'react-native-gifted-chat';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { useRoute } from '@react-navigation/native';
-import firestore from '@react-native-firebase/firestore';
+import { firestore } from './firestoreDB';
+
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
   const route = useRoute();
 
   useEffect(() => {
-    setMessages([
-      {
+    // const queryShanpSohot = firestore().collection('chats').doc("1234").
+    // collection('message').orderBy("creaedAt","desc");
+    // queryShanpSohot.onSnapshot(Snapshot=>{
+    //  const allmessage = Snapshot.docs.map(snap=>{
+    //     return{...snap.data(),createdAt:new Date()}
+    //  })
+    //  setMessages(allmessage)
+    // })
+    setMessages(
+        [{
         _id: 1,
-        text: 'Hello User!!',
+        text: 'Hello!!',
         createdAt: new Date(),
         user: {
           _id: 2,
           name: 'React Native',
-          avatar: 'https://placeimg.com/140/140/any',
+          avatar: 'https://source.unsplash.com/1024x768/?girl',
         },
       },
       {
         _id:route.params.userId,
-        text: 'Hello I am charan',
+        text: 'HI 😁😒🤔!!',
         createdAt: new Date(),
         user: {
           _id: 1,
           name: 'React Native',
-          avatar: 'https://placeimg.com/140/140/any',
-        },
-      },
-    ]);
+          avatar: 'https://source.unsplash.com/1024x768/?girl',
+        },},]
+       );
   }, []);
 
   const onSend = useCallback((messages = []) => {
     console.log("messages_________",messages)
     const msg = messages[0];
-    const senMsg = {...msg,
-        senderId:route.params.userId}
+    const senMsg = {...msg, senderId:route.params.userId} 
     setMessages((previousMessages) =>
-      GiftedChat.append(previousMessages, messages),
-    //   firestore().collection('chats').doc("1234").collection('message')
-    //   .add({...senMsg,createdAt:new Date(),})
+    GiftedChat.append(previousMessages, messages),
+    firestore.collection('chats').doc("1234").collection('message')
+      .add({...senMsg,createdAt:new Date(),})
     );
   }, []);
 

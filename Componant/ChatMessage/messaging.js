@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, FlatList,Image } from 'react-
 
 const Messages = [
   {
-    id: '1',
+    id: '9',
     userName: 'Jenny Doe',
     userImg: require('../assets/map-marker.png'),
     messageTime: '4 mins ago',
@@ -52,8 +52,8 @@ const Messaging = ({navigation}) => {
        keyExtractor={item=>item.id}
        renderItem={({item}) => (
         <TouchableOpacity onPress={() => navigation.navigate('chat', {userName: item.userName,userId:item.id})}>
-            <View style={{flexDirection:'row',marginTop:'5%',width:'100%',borderBottomWidth:1,borderBottomColor:'red'}}>
-              <Image source={item.userImg} style={{height:40,width:30,alignSelf:'center',marginLeft:'2%'}}/>
+            <View style={{flexDirection:'row',marginTop:'2%',marginBottom:'3%',width:'100%',borderBottomWidth:1,borderBottomColor:'blue'}}>
+              <Image source={{uri:"https://source.unsplash.com/1024x768/?girl"}} style={{height:50,width:50,alignSelf:'center',borderRadius:100,marginLeft:'2%'}}/>
                 <View style={{maxWidth:'90%',padding:'3%'}}>
                 <Text style={{fontSize:17,fontWeight:'bold'}}>{item.userName}</Text>
                 <Text style={{fontSize:14}}>{item.messageTime}</Text>
