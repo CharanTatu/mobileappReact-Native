@@ -49,6 +49,7 @@ import { LogBox } from 'react-native'
 import OCR from './Componant/OCR';
 import Messaging from './Componant/ChatMessage/messaging';
 import Chat from './Componant/ChatMessage/chat';
+import ToDoTaskScreen from './Componant/database/ToDoTaskScreen';
 LogBox.ignoreLogs([
 	'ViewPropTypes will be removed from React Native. Migrate to ViewPropTypes exported from \'deprecated-react-native-prop-types\'.',
 	'NativeBase: The contrast ratio of',
@@ -92,10 +93,15 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <StatusBar backgroundColor="#2b62f2" />
+      <StatusBar backgroundColor="#FFA500" />
       <NavigationContainer>
-        <Stack.Navigator initialRouteName={'Home'}>
-          <Stack.Screen
+        <Stack.Navigator initialRouteName={'SQlite-Operation'}>
+        <Stack.Screen
+            name="SQlite-Operation"
+            component={ToDoTaskScreen}
+            options={{title: 'Dashboard'}}
+          />
+          {/* <Stack.Screen
             name="Home"
             component={Drawer}
             options={{
@@ -109,7 +115,7 @@ const App = () => {
               //   </TouchableOpacity>
               // </View>
             }}
-          />
+          /> */}
           <Stack.Screen
             name="profile"
             component={ImageBack}
@@ -237,11 +243,11 @@ const App = () => {
               headerTitleAlign: 'center',
             })}
           />
-          <Stack.Screen
+          {/* <Stack.Screen
             name="SQlite-Operation"
             component={SqliteData}
             options={{title: 'SQlite-Operation'}}
-          />
+          /> */}
           <Stack.Screen
             name="Edit-Operation"
             component={EditScreen}

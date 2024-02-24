@@ -47,7 +47,9 @@ function DeleteScreen() {
                     margin: 12,
                     borderWidth: 1,
                     padding: 10,
+                    color : "black"
                 }}
+                placeholderTextColor="black"
                 placeholder="Mention Delete ID"
                 onChangeText={(inputid) => setInputid(inputid)}
             />

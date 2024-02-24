@@ -76,7 +76,7 @@ function EditScreen() {
                 <View
                     style={{
                         height: 40, borderWidth: 0,
-                        backgroundColor: "palegreen",
+                        backgroundColor: "#FFA500",
                         flexDirection: 'row',
                         flexWrap: 'wrap',
                     }}
@@ -112,7 +112,9 @@ function EditScreen() {
                         margin: 12,
                         borderWidth: 1,
                         padding: 10,
+                        color:'black'
                     }}
+                    placeholderTextColor="black"
                     placeholder="Mention Edit Name"
                     onChangeText={(userName) => setUserName(userName)}
                 >{userName}</TextInput>
@@ -122,8 +124,10 @@ function EditScreen() {
                         margin: 12,
                         borderWidth: 1,
                         padding: 10,
+                        color:'black'
                     }}
-                    placeholder="Mention Edit Age"
+                    placeholder="Edit Date"
+                    placeholderTextColor="black"
                     onChangeText={(userAge) => setUserage(userAge)}
                 >{userAge}</TextInput>
                 <TouchableOpacity
