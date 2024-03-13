@@ -2,7 +2,7 @@ import axios from 'axios';
 import React,{useState,useEffect}from 'react'
 import { View,Text,TextInput,TouchableOpacity,ToastAndroid,StyleSheet} from 'react-native'
 import { saveTokenInPref,getTokenFromPref } from './userpref';
-import { setRootPage } from './NavController';
+import { setRootPage } from './navContoller';
 
 function LoginUser({navigation}) {
     const [userEmail,SetEmail] = useState('');
