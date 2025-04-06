@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { View, FlatList, Text, ActivityIndicator } from 'react-native';
-import MovieCard from '../components/MovieCard';
+import MovieCard from './MovieCard';
 import { fetchMovies } from '../apiServices/tmdb';
 
-const HomeScreen = ({ category }) => {
+const HomeScreen = ({ category ,navigation}) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -22,7 +22,12 @@ const HomeScreen = ({ category }) => {
     <FlatList
       data={movies}
       keyExtractor={(item) => item.id.toString()}
-      renderItem={({ item }) => <MovieCard movie={item} />}
+      renderItem={({ item }) => (
+        <MovieCard
+          movie={item}
+          onPress={() => navigation.navigate('MovieDetail', { movie: item })} // Pass the movie data
+        />
+      )}
     />
   );
 };
