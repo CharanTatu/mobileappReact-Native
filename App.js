@@ -13,6 +13,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Provider} from 'react-redux';
 import {store} from './Componant/assets';
 import { LogBox } from 'react-native'
+import TabNavigator from './Componant/screens/TabNavigator';
 LogBox.ignoreLogs([
 	'ViewPropTypes will be removed from React Native. Migrate to ViewPropTypes exported from \'deprecated-react-native-prop-types\'.',
 	'NativeBase: The contrast ratio of',
@@ -28,7 +29,7 @@ const App = () => {
       <StatusBar backgroundColor="black" />
       <NavigationContainer>
         <Stack.Navigator>
-       
+         <TabNavigator/>
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
