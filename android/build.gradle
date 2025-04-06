@@ -60,11 +60,8 @@ allprojects {
             }
         }
         google()
-        maven { url 'https://www.jitpack.io' }
-        //add
-        maven { url 'https://maven.google.com' }
-        //add new again
-         mavenLocal()
-        jcenter()
+        mavenCentral()
+        jcenter() // If still used
+        maven { url 'https://jitpack.io' }
     }
 }

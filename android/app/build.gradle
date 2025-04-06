@@ -283,6 +283,7 @@ dependencies {
 
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation 'com.yqritc:android-scalablevideoview:1.0.4'
     //firebase
     // implementation project(':react-native-notifications')
     // implementation 'com.google.firebase:firebase-core:16.0.0'
